@@ -18,12 +18,14 @@ class ContactFactory extends Factory
         $firstName = $this->faker->name();
         $lastName = $this->faker->lastName();
         $phoneNumber = $this->faker->phoneNumber();
-        $dateOfBirth = $this->faker->dateTimeThisDecade();
+        $description = $this->faker->text();
+        $dateOfBirth = $this->faker->date();
 
         return [
             'first_name' => $firstName,
             'last_name' => $lastName,
             'phone_number' => $phoneNumber,
+            'description' => $description,
             'date_of_birth' => $dateOfBirth
 
         ];
