@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +13,19 @@ class ContactFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
+        $firstName = $this->faker->name();
+        $lastName = $this->faker->lastName();
+        $phoneNumber = $this->faker->phoneNumber();
+        $dateOfBirth = $this->faker->dateTimeThisDecade();
+
         return [
-            //
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'phone_number' => $phoneNumber,
+            'date_of_birth' => $dateOfBirth
+
         ];
     }
 }
