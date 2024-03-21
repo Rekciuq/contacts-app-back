@@ -15,15 +15,13 @@ class ContactFactory extends Factory
      */
     public function definition()
     {
-        $firstName = $this->faker->name();
-        $lastName = $this->faker->lastName();
+        $name = $this->faker->name();
         $phoneNumber = $this->faker->phoneNumber();
         $description = $this->faker->text();
         $dateOfBirth = $this->faker->date();
 
         return [
-            'first_name' => $firstName,
-            'last_name' => $lastName,
+            'name' => $name,
             'phone_number' => $phoneNumber,
             'description' => $description,
             'date_of_birth' => $dateOfBirth
