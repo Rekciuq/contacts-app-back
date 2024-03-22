@@ -7,6 +7,7 @@ use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ContactResource;
+use App\Http\Resources\V1\ContactCollection;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return Contact::all();
+        return new ContactCollection(Contact::all());
     }
 
     /**
