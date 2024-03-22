@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\ContactResource;
 
 class ContactController extends Controller
 {
@@ -38,7 +39,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        return $contact;
+        return new ContactResource($contact);
     }
 
     /**
