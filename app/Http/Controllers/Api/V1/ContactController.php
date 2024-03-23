@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Contact;
-use App\Http\Requests\StoreContactRequest;
-use App\Http\Requests\UpdateContactRequest;
+use App\Http\Requests\V1\StoreContactRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ContactResource;
 use App\Http\Resources\V1\ContactCollection;
@@ -20,19 +19,11 @@ class ContactController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreContactRequest $request)
     {
-        //
+        return new ContactResource(Contact::create($request->all()));
     }
 
     /**
@@ -41,14 +32,6 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         return new ContactResource($contact);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Contact $contact)
-    {
-        //
     }
 
     /**
