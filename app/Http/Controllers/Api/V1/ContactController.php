@@ -40,7 +40,7 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, Contact $contact)
     {
-        $contact->update($request->all());
+        return $contact->update($request->all());
     }
 
     /**
@@ -48,6 +48,6 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-       $contact->delete();
+       return $contact->delete();
     }
 }
