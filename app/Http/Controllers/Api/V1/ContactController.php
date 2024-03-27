@@ -40,7 +40,8 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, Contact $contact)
     {
-        return $contact->update($request->all());
+        $contact->update($request->all());
+        return new ContactResource($contact);
     }
 
     /**
